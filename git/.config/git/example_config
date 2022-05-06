@@ -1,0 +1,17 @@
+[init]
+	defaultBranch = master
+[core]
+    editor = vim
+[user]
+	name = Hunter Wilkins
+	email = hunter.wilkins2@gmail.com
+    signingKey = [Your key id]
+[push]
+    gpgSign = true
+[gpg]
+    program = gpg2
+[color]
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto    
