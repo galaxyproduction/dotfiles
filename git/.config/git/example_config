@@ -6,10 +6,10 @@
 	name = Hunter Wilkins
 	email = hunter.wilkins2@gmail.com
     signingKey = [Your key id]
-[push]
-    gpgSign = true
+[commit]
+    gpgsign = true
 [gpg]
-    program = gpg2
+    program = gpg
 [color]
     status = auto
     branch = auto
