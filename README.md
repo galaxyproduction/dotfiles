@@ -14,3 +14,8 @@ stow [dotfiles to install]
     - zsh-autosuggestions
     - [starship](https://starship.rs/)
     - nerd fonts
+- git
+    - gpg2
+    - Create gpg key
+    - `cp git/.config/git/example_config git/.config/git/config`
+    - Change user key id in config to new gpg key id
