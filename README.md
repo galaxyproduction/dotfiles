@@ -19,3 +19,4 @@ stow [dotfiles to install]
     - Create gpg key
     - `cp git/.config/git/example_config git/.config/git/config`
     - Change user key id in config to new gpg key id
+- alacritty
