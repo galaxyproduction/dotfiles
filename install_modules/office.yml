@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: libreoffice gnome-calculator evince
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

@@ -1,0 +1,14 @@
+debian:
+  dependencies: [dotfiles.yml]
+  install:
+    packages: neovim
+
+  post-install:
+    command: |+
+      stow $HOME/.dotfiles/neovim
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

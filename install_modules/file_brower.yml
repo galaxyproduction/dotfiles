@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: thunar
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

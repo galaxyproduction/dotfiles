@@ -1,0 +1,3 @@
+debian:
+  install:
+    packages: snap

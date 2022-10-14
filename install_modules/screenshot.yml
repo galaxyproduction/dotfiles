@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: flameshot
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

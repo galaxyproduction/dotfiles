@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: htop bashtop gnome-system-monitor
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

@@ -1,0 +1,15 @@
+debian:
+  dependencies: [dotfiles.yml, xorg.yml, lightdm.yml, polybar.yml, rofi.yml]
+  install:
+    packages: bspwm
+
+  post-install:
+    command: |+
+      stow $HOME/.dotfiles/bspwm
+      stow $HOME/.dotfiles/sxhkd
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

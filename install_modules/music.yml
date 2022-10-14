@@ -1,0 +1,14 @@
+debian:
+  dependencies: [snap.yml]
+  install:
+    packages: audacious
+
+  post-install:
+    command: |+
+      snap install spotify
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

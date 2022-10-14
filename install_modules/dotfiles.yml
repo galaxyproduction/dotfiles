@@ -1,0 +1,16 @@
+debian:
+  priority: 5
+  install:
+    packages: git stow
+
+  post-install:
+    command: |+
+      if [ ! -d "$HOME/.dotfiles" ]; then
+        git clone https://github.com/hunterwilkins2/dotfiles.git $HOME/.dotfiles
+      fi
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

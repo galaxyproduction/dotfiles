@@ -1,0 +1,4 @@
+debian:
+  priority: 5
+  install:
+    packages: xorg

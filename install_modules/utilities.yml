@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: gnome-disk-utility baobab gnome-font-viewer popsicle seahorse tree locate
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

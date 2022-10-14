@@ -1,0 +1,14 @@
+debian:
+  dependencies: [dotfiles.yml, rofi.yml]
+  install:
+    packages: polybar
+
+  post-install:
+    command: |+
+      stow $HOME/.dotfiles/polybar
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

@@ -1,0 +1,12 @@
+debian:
+  dependencies: [snap.yml]
+
+  post-install:
+    command: |+
+      snap install discord
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian

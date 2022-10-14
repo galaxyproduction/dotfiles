@@ -1,0 +1,9 @@
+debian:
+  install:
+    packages: code nvm
+
+arch:
+  inherit: debian
+
+fedora:
+  inherit: debian
