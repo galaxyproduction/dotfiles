@@ -2,10 +2,11 @@ fedora:
   priority: 5
 
   install:
-    packages: qt5-graphicaleffects qt5-quickcontrols2 qt5-svg sddm
+    packages: qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg sddm
 
   post-install:
     command: |+
+      sudo systemctl enable sddm && sudo systemctl set-default graphical.target
       if [ ! -d "/usr/share/sddm/themes/sddm-astronaut-theme" ]; then
         sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
         sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
