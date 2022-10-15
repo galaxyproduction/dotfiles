@@ -1,9 +1,0 @@
-debian:
-  install:
-    packages: firefox
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian

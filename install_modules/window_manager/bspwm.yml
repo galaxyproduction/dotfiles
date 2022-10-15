@@ -1,0 +1,9 @@
+fedora:
+  dependencies: [dotfiles.yml, sddm.ym, polybar.yml, rofi.yml]
+  install:
+    packages: bspwm
+
+  post-install:
+    command: |+
+      (cd $HOME/.dotfiles && stow bspwm)
+      (cd $HOME/.dotfiles && stow sxhkd)

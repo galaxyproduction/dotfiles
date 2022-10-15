@@ -1,14 +1,8 @@
-debian:
+fedora:
   dependencies: [dotfiles.yml]
   install:
     packages: rofi
 
   post-install:
     command: |+
-      stow $HOME/.dotfiles/rofi
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian
+      (cd $HOME/.dotfiles && stow rofi)

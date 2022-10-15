@@ -237,7 +237,7 @@ parser.add_argument(
 supported_os = {
     'debian': OSConfig('debian', 'sudo apt install -y', 'sudo apt update -y && sudo apt upgrade -y'),
     'arch':   OSConfig('arch', 'sudo pacman -S', 'sudo pacman -Syyu'),
-    'fedora': OSConfig('fedora', 'sudo dnf install', 'sudo dnf upgrade --refresh'),
+    'fedora': OSConfig('fedora', 'sudo dnf install -y', 'sudo dnf update -y'),
     'macos':  OSConfig('macos', 'brew install', 'brew update')
 }
 
