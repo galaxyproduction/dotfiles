@@ -5,16 +5,16 @@ fedora:
       sudo dnf copr enable atim/ubuntu-fonts -y
 
   install:
-    packages: fontconfig-font-replacements fontconfig-enhanced-defaults fontawesome-fonts fontawesome-fonts-web ubuntu-family-fonts liberation-fonts mscore-fonts-all gnome-font-viewer
+    packages: fontconfig-enhanced-defaults fontawesome-fonts fontawesome-fonts-web ubuntu-family-fonts liberation-fonts mscore-fonts-all gnome-font-viewer
 
   post-install:
     command: |+
-      if [ $(fc-list | grep -i "FiraCode" | wc -l) -lt 1]; then
+      if [ $(fc-list | grep -i "FiraCode" | wc -l) -lt 1 ]; then
         mkdir -p $HOME/.local/share/fonts
         wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip -P $HOME/.local/share/fonts
         unzip $HOME/.local/share/fonts/FiraCode.zip 
         rm $HOME/.local/share/fonts/FiraCode.zip
         fc-cache -fv
       else 
-        fc-cache -fc
+        fc-cache -fv
       fi
