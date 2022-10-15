@@ -1,0 +1,7 @@
+fedora:
+  dependencies: [dotfiles.yml]
+  install:
+    packages: picom
+
+  post-install:
+    command: (cd $HOME/.dotfiles && stow picom)

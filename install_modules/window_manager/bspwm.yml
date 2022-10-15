@@ -1,5 +1,14 @@
 fedora:
-  dependencies: [dotfiles.yml, sddm.yml, polybar.yml, rofi.yml, fonts.yml]
+  dependencies:
+    [
+      dotfiles.yml,
+      sddm.yml,
+      polybar.yml,
+      rofi.yml,
+      nitrogen.yml,
+      picom.yml,
+      fonts.yml,
+    ]
   install:
     packages: bspwm
 

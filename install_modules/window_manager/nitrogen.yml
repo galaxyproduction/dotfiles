@@ -1,0 +1,9 @@
+fedora:
+  dependencies: [dotfiles.yml]
+  install:
+    packages: nitrogen
+
+  post-install:
+    command: |+
+      mkdir -p $HOME/Pictures/wallpapers
+      cp -r $HOME/.dotfiles/wallpapers $HOME/Pictures/wallpapers
