@@ -12,7 +12,7 @@ fedora:
       if [ $(fc-list | grep -i "FiraCode" | wc -l) -lt 1 ]; then
         mkdir -p $HOME/.local/share/fonts
         wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip -P $HOME/.local/share/fonts
-        unzip $HOME/.local/share/fonts/FiraCode.zip 
+        unzip $HOME/.local/share/fonts/FiraCode.zip -d $HOME/.local/share/fonts/
         rm $HOME/.local/share/fonts/FiraCode.zip
         fc-cache -fv
       else 
