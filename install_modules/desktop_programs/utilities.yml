@@ -1,9 +1,7 @@
-debian:
-  install:
-    packages: gnome-disk-utility baobab gnome-font-viewer popsicle seahorse tree locate
-
-arch:
-  inherit: debian
-
 fedora:
-  inherit: debian
+  dependencies: [flatpak.yml]
+  install:
+    packages: gnome-disk-utility baobab seahorse tree locate
+
+  post-install:
+    command: flatpak install flathub -y com.system76.Popsicle

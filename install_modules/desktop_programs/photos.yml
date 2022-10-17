@@ -1,9 +1,6 @@
-debian:
+fedora:
   install:
     packages: eog
 
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian
+  post-install:
+    command: mkdir -p $HOME/Photos

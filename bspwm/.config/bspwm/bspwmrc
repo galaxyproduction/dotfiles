@@ -1,7 +1,8 @@
 #! /bin/sh
 
 #### AUTOSTART ####
-xrdb -load $HOME/.config/xorg/Xresources
+xrdb -load $HOME/.config/xorg/Xresources &
+$HOME/.config/screenlayout/default.sh &
 sxhkd &
 picom --config $HOME/.config/picom/picom.conf &
 nitrogen --restore &

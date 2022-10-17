@@ -3,6 +3,8 @@ fedora:
     [
       dotfiles.yml,
       sddm.yml,
+      xorg.yml,
+      xrandr.yml,
       polybar.yml,
       rofi.yml,
       nitrogen.yml,
@@ -10,7 +12,7 @@ fedora:
       fonts.yml,
     ]
   install:
-    packages: bspwm
+    packages: bspwm sxhdk
 
   post-install:
     command: |+

@@ -7,3 +7,4 @@ fedora:
     command: |+
       mkdir -p $HOME/Pictures/wallpapers
       cp -r $HOME/.dotfiles/wallpapers $HOME/Pictures/wallpapers
+      (cd $HOME/.dotfiles && stow nitrogen)

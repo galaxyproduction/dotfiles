@@ -1,16 +1,9 @@
-debian:
+fedora:
   dependencies: [dotfiles.yml]
   install:
-    packages: zsh zsh-syntax-highlighting autojump zsh-autosuggestions
+    packages: zsh zsh-syntax-highlighting autojump-zsh zsh-autosuggestions
 
   post-install:
     command: |+
       stow $HOME/.dotfiles/zsh
-
       chsh $USER /usr/bin/zsh
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian

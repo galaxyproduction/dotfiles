@@ -1,0 +1,10 @@
+fedora:
+  priority: 4
+  pre-install:
+    command: |+
+      if [ $(grep -i "max_parallel_downloads" /etc/dnf/dnf.conf) -lt 1 ]; then
+        echo "fastestmirror=True" >> /etc/dnf/dnf.conf
+        echo "max_parallel_downloads=5" >> /etc/dnf/dnf.conf
+        echo "defaultyes=True" >> /etc/dnf/dnf.conf
+        echo "keepcache=True" >> /etc/dnf/dnf.conf
+      fi

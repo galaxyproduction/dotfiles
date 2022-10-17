@@ -1,0 +1,7 @@
+fedora:
+  dependencies: [dotfiles.yml]
+  install:
+    packages: arandr
+
+  post-install:
+    command: (cd $HOME/.dotfiles && stow xrandr)

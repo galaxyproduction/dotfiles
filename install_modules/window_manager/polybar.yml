@@ -1,5 +1,5 @@
 fedora:
-  dependencies: [dotfiles.yml, rofi.yml]
+  dependencies: [dotfiles.yml, xorg.yml, rofi.yml]
   install:
     packages: polybar
 

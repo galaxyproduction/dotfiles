@@ -1,24 +1,24 @@
-debian:
+fedora:
   dependencies: [dotfiles.yml]
   install:
     packages: alacritty neofetch
 
   post-install:
     command: |+
-      mkdir -p $HOME/.config
-      git clone https://gitlab.com/dwt1/shell-color-scripts.git $HOME/.config/shell-color-scripts
-      sudo make -C $HOME/.config/shell-color-scripts install
+      (cd %HOME/.dotfiles && stow alacritty)
 
-      git clone https://github.com/pipeseroni/pipes.sh.git $HOME/.config/pipes-sh
-      sudo make -C $HOME/.config/pipes-sh install
+      if [ ! -d "/opt/shell-color-scripts" ]; then
+        mkdir -p $HOME/.config
+        git clone https://gitlab.com/dwt1/shell-color-scripts.git $HOME/.config/shell-color-scripts
+        sudo make -C $HOME/.config/shell-color-scripts install
+      fi
 
-      curl -sS https://starship.rs/install.sh | sh
+      if [ ! -d "$HOME/.config/pipes-sh" ]; then
+        git clone https://github.com/pipeseroni/pipes.sh.git $HOME/.config/pipes-sh
+        sudo make -C $HOME/.config/pipes-sh install
+      fi
 
-      stow $HOME/.dotfiles/alacritty
-      stow $HOME/.dotfiles/starship
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian
+      if [ ! -d "$HOME/.config/starship" ]; then
+        curl -sS https://starship.rs/install.sh | sh
+        (cd %HOME/.dotfiles && stow starship)
+      fi

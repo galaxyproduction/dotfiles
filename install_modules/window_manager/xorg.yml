@@ -1,0 +1,4 @@
+fedora:
+  dependencies: [dotfiles.yml]
+  post-install:
+    command: (cd $HOME/.dotfiles && stow xorg)

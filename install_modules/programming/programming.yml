@@ -1,9 +1,15 @@
-debian:
-  install:
-    packages: code nvm
-
-arch:
-  inherit: debian
-
 fedora:
-  inherit: debian
+  pre-install:
+    command: |+
+      sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+      sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+      sudo dnf check-update
+
+  install:
+    packages: code nodejs npm
+
+  post-install:
+    command: |+
+      mkdir -p $HOME/projects
+      (cd $HOME/.dotfiles && stow code)
+      sudo npm install -g nvm

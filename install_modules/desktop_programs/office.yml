@@ -1,9 +1,6 @@
-debian:
-  install:
-    packages: libreoffice gnome-calculator evince
-
-arch:
-  inherit: debian
-
 fedora:
-  inherit: debian
+  install:
+    packages: libreoffice libreoffice-langpack-en libreoffice-gtk3 libreoffice-help-en gnome-calculator evince
+
+  post-install:
+    command: mkdir -p $HOME/Documents

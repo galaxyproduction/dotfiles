@@ -1,0 +1,17 @@
+fedora:
+  install:
+    packages: lxappearance gnome-themes-extra gtk-murrine-engine sassc flat-remix-icon-theme la-capitaine-cursor-theme
+
+  post-install:
+    command: |+
+      sudo update-alternatives --set x-cursor-theme /usr/share/icons/capitaine-cursors-light/index.theme
+      gsettings set org.gnome.desktop.interface icon-theme 'Flat-Remix-Blue-Light'
+
+      if [ ! -d "$HOME/.themes/Juno-master" ]; then 
+        mkdir -p $HOME/.themes
+        wget https://github.com/EliverLara/Juno/archive/refs/heads/master.zip -d $HOME/.themes
+        unzip $HOME/.themes/master.zip -d $HOME/.themes
+        rm $HOME/.themes/master.zip
+        gsettings set org.gnome.desktop.interface gtk-theme "Juno"
+        gsettings set org.gnome.desktop.wm.preferences theme "Juno"
+      fi

@@ -1,14 +1,7 @@
 debian:
-  dependencies: [snap.yml]
+  dependencies: [flatpak.yml]
   install:
     packages: audacious
 
   post-install:
-    command: |+
-      snap install spotify
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian
+    command: flatpak install flathub -y com.spotify.Client

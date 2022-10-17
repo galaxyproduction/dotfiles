@@ -1,9 +1,9 @@
-debian:
-  install:
-    packages: totem libavcodec-extra
-
-arch:
-  inherit: debian
-
 fedora:
-  inherit: debian
+  dependencies: [rpm.yml]
+  install:
+    packages: totem
+
+  post-install:
+    command: |+
+      sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+      sudo dnf groupupdate -y sound-and-video

@@ -1,3 +1,6 @@
 fedora:
   install:
     packages: firefox
+
+  post-install:
+    command: mkdir -p $HOME/Downloads

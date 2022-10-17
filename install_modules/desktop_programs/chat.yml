@@ -1,12 +1,5 @@
-debian:
-  dependencies: [snap.yml]
+fedora:
+  dependencies: [flatpak.yml]
 
   post-install:
-    command: |+
-      snap install discord
-
-arch:
-  inherit: debian
-
-fedora:
-  inherit: debian
+    command: flatpak install flathub -y com.discordapp.Discord
