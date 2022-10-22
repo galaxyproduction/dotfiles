@@ -25,3 +25,5 @@ alias ls='ls --color'
 alias ll='ls -lAh --color'
 
 alias help='man'
+alias vim='nvim'
+
